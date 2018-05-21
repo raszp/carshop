@@ -5,6 +5,7 @@ import com.example.carshop.model.Car;
 import com.example.carshop.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -23,11 +24,7 @@ public class CarService {
         return carRepository.findAll();
     }
 
-    public Car findCarByBrand (String brand){
-        return carRepository.findByBrand(brand);
-    }
-
-    public Car findCarByModel (String model){
-        return carRepository.findByModel(model);
+    public Car findByBrand (String brand){
+        return carRepository.findCarByBrand(brand);
     }
 }

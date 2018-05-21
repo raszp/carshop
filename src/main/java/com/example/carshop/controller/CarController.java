@@ -14,26 +14,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class CarController {
 
-    CarService carService;
 
-    @Autowired
 
-    public CarController(CarService carService) {
-        this.carService = carService;
-    }
 
-    @GetMapping("/cars")
-    public List<Car> carsList (){
-        return carService.findAllCars();
-    }
-
-    @GetMapping("cars/{brand}")
-    public Car carByBrand (String brand){
-        return carService.findCarByBrand(brand);
-    }
-
-    @GetMapping("cars/{model}")
-    public Car carByModel (String model){
-        return carService.findCarByModel(model);
-    }
 }
